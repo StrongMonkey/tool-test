@@ -28,9 +28,5 @@ Description: Search stuff
 echo hello 2
 
 ---
-!metadata:*:category
-Bluesky
-
----
 !metadata:*:icon
 /admin/assets/bluesky_logo.svg
