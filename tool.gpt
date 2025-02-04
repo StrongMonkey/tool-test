@@ -1,0 +1,30 @@
+---
+Name: Test1
+Description: Testing stuff
+Share Tools: Create, Delete, Search
+
+---
+Name: Search
+Description: Search stuff
+
+do something 1
+
+---
+Name: Create
+Description: Search stuff
+
+do something 2
+
+---
+Name: Delete
+Description: Search stuff
+
+do something 3
+
+---
+!metadata:*:category
+Bluesky
+
+---
+!metadata:*:icon
+/admin/assets/bluesky_logo.svg
