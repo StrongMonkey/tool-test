@@ -1,3 +1,4 @@
+---
 Name: Test1
 Description: Testing stuff
 Share Tools: Create, Delete, Search
@@ -6,19 +7,25 @@ Share Tools: Create, Delete, Search
 Name: Search
 Description: Search stuff
 
-do something 1
+#!bin/bash
+
+echo hello 2
 
 ---
 Name: Create
 Description: Search stuff
 
-do something 2
+#!bin/bash
+
+echo hello 2
 
 ---
 Name: Delete
 Description: Search stuff
 
-do something 3
+#!bin/bash
+
+echo hello 2
 
 ---
 !metadata:*:category
