@@ -2,10 +2,10 @@
 Name: Slack Bot Tools
 Description: Tools for interacting with Slack as a bot
 Metadata: bundle: true
-Share Tools: List Channels, Search Channels, Get Channel History, Get Channel History by Time, Get Thread History From Link, Get Thread History, Search Messages, Send Message, Send Message in Thread, List Users, Search Users, Send DM, Send DM in Thread, Get Message Link, Get DM History, Get DM Thread History
+Share Tools: List Channels As Bot, Search Channels As Bot, Get Channel History As Bot, Get Channel History by Time As Bot, Get Thread History From Link As Bot, Get Thread History As Bot, Search Messages As Bot, Send Message As Bot, Send Message in Thread As Bot, List Users As Bot, Search Users As Bot, Send DM As Bot, Send DM in Thread As Bot, Get Message Link As Bot, Get DM History As Bot, Get DM Thread History As Bot
 
 ---
-Name: List Channels
+Name: List Channels As Bot
 Description: List all channels in the Slack workspace as a bot. Returns the name and ID for each channel
 Share Context: Slack Context
 Tools: github.com/gptscript-ai/datasets/filter
@@ -14,7 +14,7 @@ Credential: ./credential
 #!/usr/bin/env node ${GPTSCRIPT_TOOL_DIR}/index.js listChannels
 
 ---
-Name: Search Channels
+Name: Search Channels As Bot
 Description: Search for channels in the Slack workspace as a bot
 Share Context: Slack Context
 Tools: github.com/gptscript-ai/datasets/filter
@@ -24,24 +24,24 @@ Param: query: the search query
 #!/usr/bin/env node ${GPTSCRIPT_TOOL_DIR}/index.js searchChannels
 
 ---
-Name: Get Channel History
+Name: Get Channel History As Bot
 Description: Get the chat history for a channel in the Slack workspace as a bot
 Share Context: Slack Context
 Tools: github.com/gptscript-ai/datasets/filter
 Credential: ./credential
-Share Tools: List Channels, Search Channels
+Share Tools: List Channels As Bot, Search Channels As Bot
 Param: channelid: the ID of the channel to get the history for
 Param: limit: the number of messages to return - recommend starting with 10 and increasing if necessary
 
 #!/usr/bin/env node ${GPTSCRIPT_TOOL_DIR}/index.js getChannelHistory
 
 ---
-Name: Get Channel History by Time
+Name: Get Channel History by Time As Bot
 Description: Get the chat history for a channel in the Slack workspace within a specific time range as a bot
 Share Context: Slack Context
 Tools: github.com/gptscript-ai/datasets/filter
 Credential: ./credential
-Share Tools: List Channels, Search Channels
+Share Tools: List Channels As Bot, Search Channels As Bot
 Param: channelid: the ID of the channel to get the history for
 Param: limit: the maximum number of messages to return - recommend starting with 10 and increasing if necessary
 Param: start: the start time in RFC 3339 format
@@ -50,7 +50,7 @@ Param: end: the end time in RFC 3339 format
 #!/usr/bin/env node ${GPTSCRIPT_TOOL_DIR}/index.js getChannelHistoryByTime
 
 ---
-Name: Get Thread History From Link
+Name: Get Thread History From Link As Bot
 Description: Get the chat history for a particular thread from a Slack message link as a bot
 Share Context: Slack Context
 Tools: github.com/gptscript-ai/datasets/filter
@@ -61,12 +61,12 @@ Param: limit: the number of messages to return
 #!/usr/bin/env node ${GPTSCRIPT_TOOL_DIR}/index.js getThreadHistoryFromLink
 
 ---
-Name: Get Thread History
+Name: Get Thread History As Bot
 Description: Get the chat history for a particular thread as a bot
 Share Context: Slack Context
 Tools: github.com/gptscript-ai/datasets/filter
 Credential: ./credential
-Share Tools: List Channels, Get Channel History, Search Messages
+Share Tools: List Channels As Bot, Get Channel History As Bot, Search Messages As Bot
 Param: channelid: the ID of the channel containing the thread
 Param: threadid: the ID of the thread to get the history for
 Param: limit: the number of messages to return
@@ -74,7 +74,7 @@ Param: limit: the number of messages to return
 #!/usr/bin/env node ${GPTSCRIPT_TOOL_DIR}/index.js getThreadHistory
 
 ---
-Name: Search Messages
+Name: Search Messages As Bot
 Description: Search for messages in the Slack workspace as a bot
 Share Context: Slack Context
 Tools: github.com/gptscript-ai/datasets/filter
@@ -84,22 +84,22 @@ Param: query: the search query
 #!/usr/bin/env node ${GPTSCRIPT_TOOL_DIR}/index.js searchMessages
 
 ---
-Name: Send Message
+Name: Send Message As Bot
 Description: Send a message to a channel in the Slack workspace as a bot
 Share Context: Slack Context
 Credential: ./credential
-Share Tools: List Channels, Search Channels
+Share Tools: List Channels As Bot, Search Channels As Bot
 Param: channelid: the ID of the channel to send the message to
 Param: text: the text to send
 
 #!/usr/bin/env node ${GPTSCRIPT_TOOL_DIR}/index.js sendMessage
 
 ---
-Name: Send Message in Thread
+Name: Send Message in Thread As Bot
 Description: Send a message in a thread in the Slack workspace as a bot
 Share Context: Slack Context
 Credential: ./credential
-Share Tools: List Channels, Search Channels, Get Channel History, Search Messages
+Share Tools: List Channels As Bot, Search Channels As Bot, Get Channel History As Bot, Search Messages As Bot
 Param: channelid: the ID of the channel containing the thread
 Param: threadid: the ID of the thread to send the message to
 Param: text: the text to send
@@ -107,7 +107,7 @@ Param: text: the text to send
 #!/usr/bin/env node ${GPTSCRIPT_TOOL_DIR}/index.js sendMessageInThread
 
 ---
-Name: List Users
+Name: List Users As Bot
 Description: List all users in the Slack workspace as a bot
 Share Context: Slack Context
 Tools: github.com/gptscript-ai/datasets/filter
@@ -116,7 +116,7 @@ Credential: ./credential
 #!/usr/bin/env node ${GPTSCRIPT_TOOL_DIR}/index.js listUsers
 
 ---
-Name: Search Users
+Name: Search Users As Bot
 Description: Search for users in the Slack workspace as a bot
 Share Context: Slack Context
 Tools: github.com/gptscript-ai/datasets/filter
@@ -126,22 +126,22 @@ Param: query: the search query
 #!/usr/bin/env node ${GPTSCRIPT_TOOL_DIR}/index.js searchUsers
 
 ---
-Name: Send DM
+Name: Send DM As Bot
 Description: Send a direct message to a user as a bot
 Share Context: Slack Context
 Credential: ./credential
-Share Tools: List Users, Search Users
+Share Tools: List Users As Bot, Search Users As Bot
 Param: userids: comma-separated list of user IDs to send the message to for a group message (example: USER1ID,USER2ID), or just one ID for an individual message
 Param: text: the text to send
 
 #!/usr/bin/env node ${GPTSCRIPT_TOOL_DIR}/index.js sendDM
 
 ---
-Name: Send DM in Thread
+Name: Send DM in Thread As Bot
 Description: Send a message in a thread in a direct message conversation as a bot
 Share Context: Slack Context
 Credential: ./credential
-Share Tools: List Users, Search Users, Get DM History
+Share Tools: List Users As Bot, Search Users As Bot, Get DM History As Bot
 Param: userids: comma-separated list of user IDs for the conversation (example: USER1ID,USER2ID), or just one ID for an individual conversation
 Param: threadid: the ID of the thread to send the message to
 Param: text: the text to send
@@ -149,35 +149,35 @@ Param: text: the text to send
 #!/usr/bin/env node ${GPTSCRIPT_TOOL_DIR}/index.js sendDMInThread
 
 ---
-Name: Get Message Link
+Name: Get Message Link As Bot
 Description: Get the permalink for a message as a bot
 Share Context: Slack Context
 Credential: ./credential
-Share Tools: List Channels, Search Channels, Search Messages
+Share Tools: List Channels As Bot, Search Channels As Bot, Search Messages As Bot
 Param: channelid: the ID of the channel containing the message
 Param: messageid: the ID of the message
 
 #!/usr/bin/env node ${GPTSCRIPT_TOOL_DIR}/index.js getMessageLink
 
 ---
-Name: Get DM History
+Name: Get DM History As Bot
 Description: Get the chat history for a direct message conversation as a bot
 Share Context: Slack Context
 Tools: github.com/gptscript-ai/datasets/filter
 Credential: ./credential
-Share Tools: List Users, Search Users
+Share Tools: List Users As Bot, Search Users As Bot
 Param: userids: comma-separated list of user IDs for the conversation (example: USER1ID,USER2ID), or just one ID for an individual conversation
 Param: limit: the number of messages to return
 
 #!/usr/bin/env node ${GPTSCRIPT_TOOL_DIR}/index.js getDMHistory
 
 ---
-Name: Get DM Thread History
+Name: Get DM Thread History As Bot
 Description: Get the chat history for a thread in a direct message conversation as a bot
 Share Context: Slack Context
 Tools: github.com/gptscript-ai/datasets/filter
 Credential: ./credential
-Share Tools: List Users, Search Users, Get DM History
+Share Tools: List Users As Bot, Search Users As Bot, Get DM History As Bot
 Param: userids: comma-separated list of user IDs for the conversation (example: USER1ID,USER2ID), or just one ID for an individual conversation
 Param: threadid: the ID of the thread to get the history for
 Param: limit: the number of messages to return
@@ -194,7 +194,6 @@ Credential: ./credential
 ---
 Name: Slack Context
 Type: context
-Share Context: ../time
 Share Tools: User Context
 
 #!sys.echo
